@@ -96,11 +96,20 @@ const selectObj =()=>{
             z: Number(positionElem.getAttribute("z")),
         }
         let flag = true;
-        flag = flag && pos.x >= startPos.x && pos.x <= endPos.x;
-        if(setYAxis){
+        if(document.getElementById("select-setting").selectedIndex == 0){
+            flag = flag && pos.x >= startPos.x && pos.x <= endPos.x;
+            if(setYAxis){
             flag = flag && pos.y >= startPos.y && pos.y <= endPos.y;
+            }
+            flag = flag && pos.z >= startPos.z && pos.z <= endPos.z;
+        }else{
+            flag = false;
+            flag = flag || pos.x <  startPos.x || pos.x >  endPos.x;
+            if(setYAxis){
+            flag = flag || pos.y <  startPos.y || pos.y >  endPos.y;
+            }
+            flag = flag || pos.z <  startPos.z || pos.z >  endPos.z;
         }
-        flag = flag && pos.z >= startPos.z && pos.z <= endPos.z;
         if(flag){
             //console.log(pos);
             _DeleteList.push(object);
@@ -123,6 +132,7 @@ const resetDlt =()=>{
     document.getElementById("end-pos-x").value = 0;
     document.getElementById("end-pos-y").value = 0;
     document.getElementById("end-pos-z").value = 0;
+    document.getElementById("select-setting").selectedIndex = 0;
     reloadChartData();
 }
 const deleteObj=()=>{

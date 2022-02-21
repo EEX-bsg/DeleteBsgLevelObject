@@ -1,0 +1,2 @@
+# DeleteBsgLevelObject
+このwebアプリケーションは、Besiegeのレベルデータを読み込み、指定範囲内のオブジェクトを削除するためのものです。

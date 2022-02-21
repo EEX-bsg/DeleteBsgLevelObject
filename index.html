@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeleteBsgLevelObject</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.0.0/chartjs-plugin-zoom.min.js"></script>
+    <script type="text/javascript" src="src/main.js"></script>
+</head>
+<body onload="init()">
+    <h1>DeleteBsgLevelObject</h1>
+    <div id="input-level-data-container">Select custom level data
+    <input id="input-level-data" type="file">
+    </div>
+    <div id="info-container">
+        <h3 id="info"></h3>
+    </div>
+    <div id="main-container" style="visibility:hidden">
+        <div id="set-y-axis-container">Set the y-axis?<input id="set-y-axis" type="checkbox"></div>
+        <div id="start-pos-container">
+            Start Position(Smaller value)
+            <div id="start-pos-x-container">x:<input id="start-pos-x" type="number" value=0></div>
+            <div id="start-pos-y-container" style="visibility:hidden"  class="y-axis">y:<input id="start-pos-y" type="number" value=0></div>
+            <div id="start-pos-z-container">z:<input id="start-pos-z" type="number" value=0></div>
+        </div>
+        <div id="end-pos-container">
+            End Position(Larger value)
+            <div id="end-pos-x-container">x:<input id="end-pos-x" type="number" value=0></div>
+            <div id="end-pos-y-container" style="visibility: hidden"  class="y-axis">y:<input id="end-pos-y" type="number" value=0></div>
+            <div id="end-pos-z-container">z:<input id="end-pos-z" type="number" value=0></div>
+        </div>
+        <div id="button-container">
+            <input id="select-btn" type="button" value="Select">
+            <div id="all-object-count">All:</div>
+            <div id="select-object-count">Selected:</div>
+            <input id="delete-btn" type="button" value="Delete" style="visibility: hidden"><br>
+            <input id="download-btn" type="button" value="Download">
+        </div>
+    </div>
+    <div id="chart-container" style="height:40vw; width:40vw; background-color:#EEEEEE">
+        <canvas id="canvas"> </canvas>
+      </div>
+</body>
+</html>
